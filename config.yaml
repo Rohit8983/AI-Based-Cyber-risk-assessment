@@ -1,0 +1,13 @@
+# Risk scoring configuration
+risk_threshold: 0.7     # alert if predicted probability of HIGH risk >= 0.7
+recommendations:
+  default:
+    - "Isolate affected asset from network."
+    - "Block IOC (IP/Domain/Hash) on firewall/EDR."
+    - "Rotate credentials and enforce MFA."
+    - "Patch vulnerabilities and re-scan asset."
+  auth_failure:
+    - "Lock suspicious accounts and enforce password reset."
+    - "Review login sources and enable geo-velocity rules."
+  malware:
+    - "Quarantine host, run EDR scan, remove persistence."
