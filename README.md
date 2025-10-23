@@ -1,63 +1,48 @@
+Here’s a more concise, professional version of your README suitable for a website or public-facing description. I’ve removed internal structure details and made it more polished for reading. I’ve left a placeholder for your website link—you can replace it with your actual URL.
+
+---
+
 # AI-Based Real-Time Cyber Risk Assessment (Prototype)
 
-This is a **working prototype** aligned to your document (a–h). It ingests cybersecurity events, 
-trains a model to predict **high-risk** events, and provides a **Streamlit dashboard** for scoring, alerts, and recommendations.
+Experience **real-time cyber risk assessment** with this interactive prototype. It ingests cybersecurity event data, predicts **high-risk incidents**, and provides actionable recommendations via a **user-friendly Streamlit dashboard**.
 
-## 🧱 Project Structure
-```
-cyber-risk-rt/
-├── app.py                     # Streamlit dashboard
-├── config.yaml                # Threshold & playbook
-├── requirements.txt
-├── backend/
-│   ├── score.py               # Load model and score new events
-│   └── train_model.py         # Train RandomForest on sample data
-├── data/
-│   ├── sample_events.csv      # Synthetic sample data (labeled)
-│   └── sample_events_preview.csv
-├── models/
-│   └── risk_model.pkl         # Trained model (created after training)
-└── utils/
-    └── recommendations.py     # Playbook loader & suggestions
-```
+**Try it online:** https://secure-risk1-ai.streamlit.app/
 
-## 🚀 Quickstart
-```bash
-cd cyber-risk-rt
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+---
 
-pip install -r requirements.txt
+## Overview
 
-# 1) Train the model (uses data/sample_events.csv)
-python backend/train_model.py
+This prototype helps security teams **prioritize threats** and **mitigate risks** efficiently. Key features include:
 
-# 2) Run the dashboard
-streamlit run app.py
-```
+* **Risk Scoring:** Predicts probability of high-risk events using a RandomForest model.
+* **Alerts:** Flags critical events automatically based on configurable thresholds.
+* **Recommendations:** Provides actionable mitigation steps using a predefined security playbook.
+* **Interactive Dashboard:** Upload events CSV or use sample data for instant insights.
 
-Open the URL Streamlit prints (usually http://localhost:8501), then **upload events CSV** (or use the sample).
-You’ll see **risk probabilities**, **alerts** when risk >= threshold, and **recommended actions**.
+---
 
-## 📊 Data Schema (columns)
-- timestamp, src_ip, dst_ip, event_type, severity
-- vuln_count, asset_id, asset_criticality (1–5)
-- past_incidents, auth_failures, malware_alerts, anomalous_bytes
-- label_high_risk (0/1) — for training only
+## Data & Model
 
-## 🧠 Model
-- scikit-learn **RandomForestClassifier** in a preprocessing pipeline (OneHotEncoder + imputation).
-- Predicts probability of **high risk**.
+* **Input Data:** Event logs including IPs, severity, vulnerabilities, asset criticality, past incidents, authentication failures, malware alerts, and anomalous activity.
+* **Machine Learning:** Uses **RandomForestClassifier** with preprocessing (encoding & imputation) to predict high-risk events.
+* **Output:** Probability scores and recommended actions per event.
 
-## 🔔 Alerts & Recommendations
-- Threshold set in `config.yaml` (default 0.7) or adjustable in the app.
-- Recommendations come from `utils/recommendations.py` + `config.yaml` playbook.
+---
 
-## 🔧 Next Steps (future enhancements)
-- Replace synthetic data with **real SIEM/EDR/Vuln scan feeds**.
-- Add **Kafka** or **FastAPI** for real-time streaming.
-- Add **financial impact** and **what-if** simulations.
-- Export to **Power BI/Tableau** or integrate with **GRC** tools.
+## Highlights
+
+* Adjustable risk threshold for alerts
+* Playbook-driven recommendations for rapid mitigation
+* Ready for **real-time integration** with SIEM, EDR, or vulnerability scanning systems
+* Designed for easy adoption by cybersecurity teams
+
+---
+
+## Future Enhancements
+
+* Replace synthetic events with **live SIEM/EDR feeds**
+* Add **real-time streaming** via Kafka or FastAPI
+* Incorporate **financial impact analysis** and **what-if scenarios**
+* Export insights to **Power BI, Tableau**, or integrate with **GRC tools**
+
+---
