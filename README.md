@@ -1,8 +1,6 @@
-Here’s a more concise, professional version of your README suitable for a website or public-facing description. I’ve removed internal structure details and made it more polished for reading. I’ve left a placeholder for your website link—you can replace it with your actual URL.
-
 ---
 
-# AI-Based Real-Time Cyber Risk Assessment (Prototype)
+# AI-Based Real-Time Cyber Risk Assessment
 
 Experience **real-time cyber risk assessment** with this interactive prototype. It ingests cybersecurity event data, predicts **high-risk incidents**, and provides actionable recommendations via a **user-friendly Streamlit dashboard**.
 
